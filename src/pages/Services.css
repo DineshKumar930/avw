@@ -1,0 +1,615 @@
+/* src/pages/Services.css */
+
+/* Services Page Container */
+.services-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 100px 0 80px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Animated Wood Grain Pattern */
+.services-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(139, 90, 43, 0.02) 0px,
+    rgba(139, 90, 43, 0.02) 2px,
+    transparent 2px,
+    transparent 8px
+  );
+  pointer-events: none;
+}
+
+.services-page::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: radial-gradient(circle at 20% 50%, rgba(139, 90, 43, 0.03) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #2c3e50 0%, #8B5A2B 40%, #c49a6c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  animation: fadeInDown 0.8s ease;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #8B5A2B, #c49a6c, #8B5A2B, transparent);
+  border-radius: 2px;
+  animation: widthGrow 0.8s ease 0.3s backwards;
+}
+
+@keyframes widthGrow {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100px;
+  }
+}
+
+.section-subtitle {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 48px;
+  color: #6c757d;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  animation: fadeInUp 0.8s ease 0.2s backwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* Service Card */
+.service-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #8B5A2B, #c49a6c, #8B5A2B);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(139, 90, 43, 0.15);
+}
+
+/* Service Icon */
+.service-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  color: #8B5A2B;
+}
+
+.service-card:hover .service-icon {
+  background: linear-gradient(135deg, #8B5A2B, #c49a6c);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.service-icon svg {
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-icon svg {
+  transform: rotateY(180deg);
+}
+
+/* Card Title */
+.service-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  transition: color 0.3s ease;
+}
+
+.service-card:hover h3 {
+  color: #8B5A2B;
+}
+
+/* Card Description */
+.service-card p {
+  color: #6c757d;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Features List */
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.features-list li {
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #495057;
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+.features-list li:hover {
+  transform: translateX(5px);
+  color: #8B5A2B;
+}
+
+.check-icon {
+  color: #8B5A2B;
+  font-weight: bold;
+  font-size: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: rgba(139, 90, 43, 0.1);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.features-list li:hover .check-icon {
+  background: #8B5A2B;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Features Highlight Card */
+.features-highlight {
+  background: linear-gradient(135deg, #ffffff, #f8f9fa);
+  border-radius: 20px;
+  padding: 2.5rem;
+  margin-top: 3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.features-highlight:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(139, 90, 43, 0.15);
+}
+
+.highlight-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.highlight-item {
+  text-align: center;
+  flex: 1;
+  min-width: 150px;
+  transition: all 0.3s ease;
+}
+
+.highlight-item:hover {
+  transform: translateY(-5px);
+}
+
+.highlight-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #8B5A2B, #c49a6c);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  transition: all 0.3s ease;
+}
+
+.highlight-item:hover .highlight-icon {
+  transform: scale(1.1) rotateY(180deg);
+  box-shadow: 0 10px 20px rgba(139, 90, 43, 0.3);
+}
+
+.highlight-icon svg {
+  color: white;
+}
+
+.highlight-item p {
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, #2c3e50, #1a252f);
+  border-radius: 20px;
+  padding: 3rem;
+  margin-top: 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cta-section h2 {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-section p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-button {
+  background: linear-gradient(135deg, #8B5A2B, #c49a6c);
+  color: white;
+  border: none;
+  padding: 14px 36px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.cta-button:hover::before {
+  left: 100%;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+  .services-grid {
+    gap: 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 2.8rem;
+  }
+  
+  .highlight-grid {
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .services-page {
+    padding: 80px 0 60px;
+  }
+  
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+  }
+  
+  .section-title::after {
+    width: 80px;
+    bottom: -12px;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 32px;
+  }
+  
+  .service-card {
+    padding: 1.5rem;
+  }
+  
+  .service-icon {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .service-icon svg {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .service-card h3 {
+    font-size: 1.3rem;
+  }
+  
+  .features-highlight {
+    padding: 1.5rem;
+  }
+  
+  .highlight-grid {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .highlight-item {
+    min-width: auto;
+  }
+  
+  .cta-section {
+    padding: 2rem;
+  }
+  
+  .cta-section h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .services-page {
+    padding: 70px 0 50px;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .section-title::after {
+    width: 60px;
+    bottom: -10px;
+    height: 3px;
+  }
+  
+  .section-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+  }
+  
+  .service-card {
+    padding: 1.25rem;
+  }
+  
+  .service-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+  }
+  
+  .service-icon svg {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .service-card h3 {
+    font-size: 1.2rem;
+  }
+  
+  .service-card p {
+    font-size: 0.9rem;
+  }
+  
+  .features-list li {
+    font-size: 0.85rem;
+  }
+  
+  .highlight-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .highlight-icon svg {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .cta-section h2 {
+    font-size: 1.3rem;
+  }
+  
+  .cta-section p {
+    font-size: 0.9rem;
+  }
+  
+  .cta-button {
+    padding: 12px 28px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablet Landscape */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Animation Delays for Cards */
+.service-card:nth-child(1) { animation-delay: 0.1s; }
+.service-card:nth-child(2) { animation-delay: 0.2s; }
+.service-card:nth-child(3) { animation-delay: 0.3s; }
+.service-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Hover Effects for Desktop */
+@media screen and (min-width: 1025px) {
+  .service-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .service-card:hover {
+    transform: translateY(-10px) scale(1.02);
+  }
+}
+
+/* Custom Scrollbar */
+.services-page::-webkit-scrollbar {
+  width: 10px;
+}
+
+.services-page::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.services-page::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #8B5A2B, #c49a6c);
+  border-radius: 5px;
+}
+
+.services-page::-webkit-scrollbar-thumb:hover {
+  background: #8B5A2B;
+}
+
+/* Loading Animation for Cards */
+@keyframes cardPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.service-card.loading {
+  animation: cardPulse 1.5s ease infinite;
+}
+
+/* Optional: Add floating animation to icons */
+@keyframes floatIcon {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.service-card:hover .service-icon {
+  animation: floatIcon 2s ease infinite;
+}
