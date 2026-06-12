@@ -77,7 +77,7 @@ const Contact = () => {
             <MapPin className="info-icon" size={28} style={{ color: '#8B5A2B' }} />
             <div>
               <h4 style={{ marginBottom: '4px' }}>Our Location</h4>
-              <p>Main Road, Near Post Office, Sahjanwa, Gorakhpur - 273209</p>
+              <p>Sahjanwa, Gorakhpur - 273209</p>
             </div>
           </div>
           
@@ -85,8 +85,8 @@ const Contact = () => {
             <Phone className="info-icon" size={28} style={{ color: '#8B5A2B' }} />
             <div>
               <h4 style={{ marginBottom: '4px' }}>Phone Number</h4>
-              <p>+91 98765 43210</p>
-              <p>+91 87654 32109</p>
+              <p>+91 9616945898</p>
+              <p>+91 7800256917</p>
             </div>
           </div>
           
@@ -94,8 +94,7 @@ const Contact = () => {
             <Mail className="info-icon" size={28} style={{ color: '#8B5A2B' }} />
             <div>
               <h4 style={{ marginBottom: '4px' }}>Email Address</h4>
-              <p>info@woodcraftstudio.com</p>
-              <p>support@woodcraftstudio.com</p>
+              <p>avwoodencraft@gmail.com</p>
             </div>
           </div>
           
@@ -103,7 +102,7 @@ const Contact = () => {
             <Clock className="info-icon" size={28} style={{ color: '#8B5A2B' }} />
             <div>
               <h4 style={{ marginBottom: '4px' }}>Working Hours</h4>
-              <p>Monday - Saturday: 9:00 AM - 7:00 PM</p>
+              <p>Monday - Saturday: 9:00 AM - 5:00 PM</p>
               <p>Sunday: Closed</p>
             </div>
           </div>
